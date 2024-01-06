@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from 'bcrypt'
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -16,6 +17,16 @@ const userSchema = new mongoose.Schema({
     required: true,
   }
 }, { timestamps: true })
+
+userSchema.statics.signup = async function (username, email, password) {
+  const exist = await this.findOne({ email })
+  if (exist) {
+    throw Error('Email already in use')
+  }
+  const hashPassword = bcrypt.hashSync(password, 10)
+  const user = await this.create({ username, email, password: hashPassword })
+  return user
+}
 
 const User = mongoose.model('User', userSchema)
 
