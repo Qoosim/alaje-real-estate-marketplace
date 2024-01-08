@@ -18,15 +18,15 @@ const userSchema = new mongoose.Schema({
   }
 }, { timestamps: true })
 
-userSchema.statics.signup = async function (username, email, password) {
-  const exist = await this.findOne({ email })
-  if (exist) {
-    throw Error('Email already in use')
-  }
-  const hashPassword = bcrypt.hashSync(password, 10)
-  const user = await this.create({ username, email, password: hashPassword })
-  return user
-}
+// userSchema.statics.signup = async function (username, email, password) {
+//   const exist = await this.findOne({ email })
+//   if (exist) {
+//     throw Error('Email already in use')
+//   }
+//   const hashPassword = bcrypt.hashSync(password, 10)
+//   const user = await this.create({ username, email, password: hashPassword })
+//   return user
+// }
 
 const User = mongoose.model('User', userSchema)
 
