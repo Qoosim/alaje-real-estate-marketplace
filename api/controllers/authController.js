@@ -59,3 +59,29 @@ export const login = async (req, res) => {
   }
 
 }
+
+export const google = async (req, res) => {
+  // destructure email from google result
+  const { email } = req.body
+  try {
+    const user = await User.findOne({ email })
+    // check if the user exist
+    if (user) {
+      // create token
+      const token = createToken(user._id)
+      const { password: pass, ...restInfo } = user._doc
+      res.cookie("access_token", token, { httpOnly: true }).status(200).json(restInfo)
+    } else {
+      // user does not exist, create one
+      const genPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8)
+      const hashPassword = bcrypt.hashSync(genPassword, 10)
+      const newUser = await User({ username: req.body.name.split(" ").join("").toLowerCase() + Math.random().toString(36).slice(-8), email: req.body.email, password: hashPassword, avatar: req.body.photo })
+      await newUser.save()
+      const token = createToken(newUser._id)
+      const { password: pass, ...restInfo } = newUser._doc
+      res.cookie("access_token", token, { httpOnly: true }).status(200).json(restInfo)
+    }
+  } catch (error) {
+    res.status(401).json({ error: error.message })
+  }
+}
