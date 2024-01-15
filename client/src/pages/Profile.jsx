@@ -8,7 +8,10 @@ import {
   updateUserFailure,
   deleteUserStart,
   deleteUserSuccess,
-  deleteUserFailure
+  deleteUserFailure,
+  logoutUserStart,
+  logoutUserSuccess,
+  logoutUserFailure
 } from '../redux/user/userSlice'
 
 const Profile = () => {
@@ -109,6 +112,23 @@ const Profile = () => {
     }
   }
 
+  const handleUserLogout = async () => {
+    try {
+      dispatch(logoutUserStart())
+      const response = await fetch('/api/auth/logout')
+      const json = await response.json()
+      if (!response.ok) {
+        dispatch(logoutUserFailure(json.error))
+      }
+      if (response.ok) {
+        dispatch(logoutUserSuccess(json))
+      }
+      
+    } catch (error) {
+      dispatch(logoutUserFailure(error.message))
+    }
+  }
+
   return (
     <section className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
@@ -173,7 +193,12 @@ const Profile = () => {
         >
           Delete account
         </span>
-        <span className='text-red-700 cursor-pointer'>Sign out</span>
+        <span
+          className='text-red-700 cursor-pointer'
+          onClick={handleUserLogout}
+        >
+          Sign out
+        </span>
       </div>
       { error && <p className='text-red-700 mt-5 text-center italic'>{error}</p>}
       { successMsg && <p className='text-green-700 mt-5 text-center italic'>User details updated successfully</p> }
