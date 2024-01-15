@@ -3,6 +3,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import userRouter from './routes/userRoute.js'
 import authRouter from './routes/authRoute.js'
+import listingRouter from './routes/listingRoute.js'
 import cookieParser from 'cookie-parser'
 dotenv.config()
 
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 // routes
 app.use('/api/user', userRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/listing', listingRouter)
 
 const port = process.env.PORT || 4001
 mongoose.connect(process.env.MONGO_DB)
