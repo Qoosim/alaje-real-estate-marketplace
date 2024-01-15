@@ -1,5 +1,6 @@
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
 import React, { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { app } from '../firebase'
 import {
@@ -185,6 +186,12 @@ const Profile = () => {
         >
           {isLoading ? `Loading...` : `update`}
         </button>
+        <Link
+          to='/create-listing'
+          className='bg-green-700 p-3 rounded-lg text-white text-center uppercase hover:opacity-95'
+        >
+          Create Listing
+        </Link>
       </form>
       <div className='flex justify-between mt-5'>
         <span
