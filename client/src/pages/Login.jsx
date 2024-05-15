@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loginStart, loginSuccess, loginFailure } from '../redux/user/userSlice'
@@ -53,7 +53,7 @@ const Login = () => {
         <OAuth />
       </form>
       <div className='flex gap-2 mt-4'>
-        <p>Dont have an account?</p>
+        <p>Don&apos;t have an account?</p>
         <Link to="/signup">
           <span className='text-blue-700'>Sign Up</span>
         </Link>
