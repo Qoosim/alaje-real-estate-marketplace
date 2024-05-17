@@ -22,15 +22,16 @@ export const signup = async (req, res) => {
     return res.status(401).json({ error: "Password not strong enough" })
   }
 
-  const exist = await User.findOne({ email })
-  if (exist) {
+  const existUser = await User.findOne({ email })
+  if (existUser) {
     return res.status(400).json({ error: "Email already in use" })
   }
   try {
     const hashPassword = bcrypt.hashSync(password, 10)
     const newUser = new User({ username, email, password: hashPassword })
     await newUser.save()
-    res.status(201).json(newUser)
+    const { password: pass, ...restInfo } = newUser._doc
+    res.status(201).json(restInfo)
   } catch (error) {
     res.status(401).json({ error: error.message })
   }

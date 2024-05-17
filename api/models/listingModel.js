@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const listingSchema = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
     required: true
   },
@@ -18,7 +18,7 @@ const listingSchema = new mongoose.Schema({
     required: true
   },
   discountPrice: {
-    type: String,
+    type: Number,
     required: true
   },
   bathrooms: {
@@ -56,5 +56,5 @@ const listingSchema = new mongoose.Schema({
 }, { timestamps: true })
 
 const Listing = mongoose.model('Listing', listingSchema)
-export default Listing
 
+export default Listing
