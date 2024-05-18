@@ -181,7 +181,7 @@ const Profile = () => {
   };
 
   return (
-    <section className="p-3 max-w-[57%] mx-auto">
+    <section className="p-3 max-w-[40%] mx-auto">
       <h1 className="text-3xl font-semibold text-center my-7">Profile</h1>
       <input
         type="file"
