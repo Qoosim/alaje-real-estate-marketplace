@@ -173,7 +173,7 @@ export const UpdateListing = () => {
         setDataError(data.message);
         setUpdateIsLoading(false);
       }
-      navigate(`/listing/${currentUser._id}`);
+      navigate(`/listing/${data._id}`);
     } catch (error) {
       setDataError(error.message);
       setUpdateIsLoading(false);
@@ -187,7 +187,7 @@ export const UpdateListing = () => {
   return (
     <main className="p-3 max-w-[70%] mx-auto">
       <h1 className="text-3xl text-center my-7 font-semibold">
-        Update Listing
+        Update a Listing
       </h1>
       <form className="flex flex-col gap-4 sm:flex-row" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4 flex-1">
