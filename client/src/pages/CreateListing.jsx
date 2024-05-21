@@ -159,7 +159,7 @@ const CreateListing = () => {
         setDataError(data.message);
         setCreateIsLoading(false);
       }
-      navigate(`/listing/${currentUser._id}`)
+      navigate(`/listing/${data._id}`)
     } catch (error) {
       setDataError(error.message);
       setCreateIsLoading(false);
