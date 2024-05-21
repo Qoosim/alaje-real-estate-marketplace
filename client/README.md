@@ -1,8 +1,61 @@
-# React + Vite
+# Alaje Real Estate Marketplace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Alaje Estate is a leading real estate agency that specializes in helping clients buy, sell, and rent properties in the most desirable neighborhoods. Our team of experienced agents is dedicated to providing exceptional service and making the buying and selling process as smooth as possible. 
 
-Currently, two official plugins are available:
+![screenshot](./src/assets/cover-page.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚒️  Built with
+- HTML
+- JavaScript
+
+## 🎞️ Frameworks and Technologies used
+- React && Redux
+- Tailwind CSS
+
+## 🖥️ Live Demo
+[Demo](https://alaje-real-estate.onrender.com/):point_left:
+
+## 🖥️ Getting Started
+To get a local version up and running on your machine, follow these simple example steps.
+
+## 🛠️ Prerequisites
+```
+  Install Node.js on your machine
+```
+
+## 🕹️ Setup
+```
+  Clone the repository on your machine and cd into it
+    https://github.com/Qoosim/alaje-real-estate-marketplace
+    cd alaje-real-estate-marketplace
+  run yarn
+  run yarn start
+```
+
+## 👨‍💻 Author
+
+👤 **Qoosim AbdulGhaniyy**
+
+- GitHub: [Qoosim](https://github.com/Qoosim)
+- LinkedIn: [Qoosim](https://www.linkedin.com/in/qoosim)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## 📦 Show your support
+
+Give a ⭐️ if you like this project!
+
+## 👏 Acknowledgments
+
+- Many thanks to Sahand for giving insight on the project layout on his live project
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
