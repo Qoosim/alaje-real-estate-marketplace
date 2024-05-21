@@ -1,29 +1,35 @@
 # Alaje Real Estate Marketplace
 
-> Alaje Estate is a leading real estate agency that specializes in helping clients buy, sell, and rent properties in the most desirable neighborhoods. Our team of experienced agents is dedicated to providing exceptional service and making the buying and selling process as smooth as possible. 
+> Alaje Estate is a leading real estate agency that specializes in helping clients buy, sell, and rent properties in the most desirable neighborhoods. Our team of experienced agents is dedicated to providing exceptional service and making the buying and selling process as smooth as possible.
 
 ![screenshot](./src/assets/cover-page.png)
 
-## ⚒️  Built with
+## ⚒️ Built with
+
 - HTML
 - JavaScript
 
 ## 🎞️ Frameworks and Technologies used
+
 - React && Redux
 - Tailwind CSS
 
 ## 🖥️ Live Demo
+
 [Demo](https://alaje-real-estate.onrender.com/):point_left:
 
 ## 🖥️ Getting Started
+
 To get a local version up and running on your machine, follow these simple example steps.
 
 ## 🛠️ Prerequisites
+
 ```
   Install Node.js on your machine
 ```
 
 ## 🕹️ Setup
+
 ```
   Clone the repository on your machine and cd into it
     https://github.com/Qoosim/alaje-real-estate-marketplace
@@ -58,4 +64,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./MIT.md) licensed.
+This project is [LICENSE](./LICENSE.md) licensed.
