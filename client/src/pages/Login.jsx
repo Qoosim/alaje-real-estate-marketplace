@@ -3,9 +3,11 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loginStart, loginSuccess, loginFailure } from '../redux/user/userSlice'
 import OAuth from '../components/OAuth'
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [formData, setFormData] = useState({})
+  const [showPassword, setShowPassword] = useState(false);
   // const [error, setError] = useState(null)
   // const [isLoading, setIsLoading] = useState(null)
   const navigate = useNavigate()
@@ -48,7 +50,26 @@ const Login = () => {
       <h1 className='text-3xl text-center font-semibold my-4'>Login</h1>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
         <input type="email" placeholder='Email' id='email' className='border p-3 rounded-lg focus:outline-none' onChange={handleFormData} />
-        <input type="password" placeholder='Password' id='password' className='border p-3 rounded-lg focus:outline-none' onChange={handleFormData} />
+        <div className="relative flex items-center">
+          <input
+           type={showPassword ? "text" : "password"}
+            placeholder='Password'
+            id='password'
+            className='border p-3 rounded-lg focus:outline-none w-full pr-10'
+            onChange={handleFormData}
+          />
+          <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-0 mr-3"
+              >
+                {showPassword ? (
+                  <FaEye className="text-[#737476]" />
+                ) : (
+                  <FaEyeSlash className="text-[#737476]" />
+                )}
+              </button>
+        </div>
         <button disabled={isLoading} className='bg-slate-700 uppercase text-white rounded-lg p-3 hover:opacity-95 disabled:opacity-80'>{isLoading ? 'Loading...' : 'sign in'}</button>
         <OAuth />
       </form>
